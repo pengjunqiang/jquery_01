@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery效果</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background: #08babb;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="show">
+<input type="button" value="hide">
+<input type="button" value="slideDown">
+<input type="button" value="slideUp">
+<input type="button" value="slideToggle">
+<input type="button" value="fadeIn">
+<div class="box"></div>
+<script src="jquery.min.js"></script>
+<script>
+    $("input").eq(0).click(function () {
+        $(".box").show(500);
+    });
+    $("input").eq(1).click(function () {
+        $(".box").hide(500);
+    });
+    $("input").eq(2).click(function () {
+        $(".box"). slideDown(500);
+    });
+    $("input").eq(3).click(function () {
+        $(".box"). slideUp(500);
+    });
+    $("input").eq(4).click(function () {
+        $(".box"). slideToggle(500);
+    });
+    $("input").eq(5).click(function () {
+        $(".box"). fadeIn(1000,"linear");
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉菜单</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 600px;
+            margin: 50px auto 0;
+        }
+        .box .list{
+            width: 100%;
+        }
+        .box .list>li{
+            width: 150px;
+            line-height: 35px;
+            background:#00c7ff ;
+            float: left;
+            text-align: center;
+            cursor: pointer;
+            color: #fff;
+            position: relative;
+        }
+        .box .list li.cur{
+            background: #08babb;
+        }
+        .box .list li .list-child{
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 35px;
+        }
+        .box .list li .list-child li{
+            width: 150px;
+            line-height: 35px;
+            background:#00c7ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="list">
+            <li class="cur">
+                <span>开心</span>
+                <ul class="list-child">
+                    <li>开心</li>
+                    <li>开心</li>
+                    <li>开心</li>
+                    <li>开心</li>
+                </ul>
+            </li>
+            <li>
+                <span>开心</span>
+                <ul class="list-child">
+                    <li>开心</li>
+                    <li>开心</li>
+                    <li>开心</li>
+                    <li>开心</li>
+                </ul>
+            </li>
+            <li>
+                <span>开心</span>
+                <ul class="list-child">
+                    <li>开心</li>
+                    <li>开心</li>
+                    <li>开心</li>
+                    <li>开心</li>
+                </ul>
+            </li>
+            <li>
+                <span>开心</span>
+                <ul class="list-child">
+                    <li>开心</li>
+                    <li>开心</li>
+                    <li>开心</li>
+                    <li>开心</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script>
+        /*$(" .box .list>li").mouseover(function () {
+            $(this).addClass("cur").siblings().removeClass("cur");
+            $(this).find(".list-child").stop().slideDown(300);
+        }).mouseout(function () {
+            $(this).find(".list-child").stop().slideUp(300);
+        })*/
+        $(" .box .list>li").hover(function () {
+            $(this).addClass("cur").siblings().removeClass("cur");
+            $(this).find(".list-child").stop().slideToggle(300);
+        })
+    </script>
+</body>
+</html>

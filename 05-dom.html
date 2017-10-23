@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background: #00c7ff;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="append">
+<input type="button" value="appendTo">
+<input type="button" value="prepend">
+<input type="button" value="after">
+<input type="button" value="before">
+<div class="box"></div>
+<script src="jquery3.2.1.js"></script>
+<script>
+    $("input").eq(0).click(function () {
+        $(".box").append("<h1>Hello</h1>");
+    });
+    $("input").eq(1).click(function () {
+        $("<h1>Hello</h1>").appendTo(".box");
+    });
+    $("input").eq(2).click(function () {
+        $(".box").prepend("<h1>Hello</h1>");
+    });
+    $("input").eq(3).click(function () {
+        $(".box").after("<h1>Hello</h1>");
+    });
+    $("input").eq(4).click(function () {
+        $(".box").before("<h1>Hello</h1>");
+    })
+</script>
+</body>
+</html>

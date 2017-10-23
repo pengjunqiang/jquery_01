@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 600px;
+            margin: 50px auto;
+        }
+        .box .list{
+            width: 100%;
+            height: 50px;
+            background: #35bbb2;
+        }
+        .box .list li{
+            width: 25%;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            cursor:pointer;
+        }
+        .box .list li.cur{
+            background: #00c7ff;
+        }
+        .box .content{
+            width: 100%;
+            border: 1px solid #00c7ff;
+            box-sizing: border-box;
+        }
+        .box .content>div {
+            padding: 20px;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul class="list">
+            <li class="cur">认真</li>
+            <li>细心</li>
+            <li>思考</li>
+            <li>学习</li>
+        </ul>
+        <div class="content">
+            <div style="display: block">我爱学习，学习使我快乐</div>
+            <div>我爱学习，学习使我快乐！当我的BGM响起的时候，我是无敌的！</div>
+            <div>我爱学习，学习使我快乐！念念不忘，必有回响</div>
+            <div>我爱学习，学习使我快乐，向往的生活</div>
+        </div>
+    </div>
+    <script src="jquery3.2.1.js"></script>
+    <script>
+        $(function () {
+            $(".box .list li").click(function () {
+                $(this).addClass("cur").siblings().removeClass("cur");
+                //var index=$(this).index();
+                var index=$(".box .list li").index(this);
+                $(".box .content>div").hide().eq(index).show();
+            })
+        })
+    </script>
+</body>
+</html>
